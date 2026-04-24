@@ -1,0 +1,172 @@
+\documentclass[12pt, a4paper]{article}
+
+% Essential packages
+\usepackage{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{isomath}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{wrapfig}
+\usepackage{titlesec}
+\usepackage{gensymb}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+\usepackage{listings}
+\usepackage{matlab-prettifier}
+\usepackage[vlined,ruled,linesnumbered]{algorithm2e}
+\usepackage{lipsum}
+\usepackage[toc]{appendix}
+
+% Header
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[L]{\textbf{123ABC}}
+\fancyhead[R]{\textbf{Page \thepage}}
+
+\fancyheadoffset[L]{\oddsidemargin}
+\fancyheadoffset[R]{\oddsidemargin}
+
+% Code style
+\lstset{
+	basicstyle=\ttfamily,
+	keywordstyle= \bfseries,
+	commentstyle= \ttfamily\color[RGB]{0,128,0}\slshape,
+	stringstyle = \ttfamily\color[RGB]{188,118,0}\slshape\bfseries,
+	identifierstyle=\color[RGB]{0,0,0},         
+	frame=shadowbox,
+	rulesepcolor=\color{red!20!green!20!blue!20},
+	showspaces=false,showstringspaces=false,  
+	extendedchars=false,
+	showtabs=false,
+	tabsize=1, breaklines,
+	numbers = left, numberstyle=\rmfamily\tiny\slshape, stepnumber = 1, numbersep= 5pt 
+}
+
+% Page settings
+\geometry{margin=2.5cm}
+\onehalfspacing
+\doublespacing
+
+% Custom command
+\newcommand{\note}[1]{%
+    \textcolor{blue}{note:$\langle$\textbf{#1}$\rangle$}%
+}
+
+% Title formatting
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\DeclareMathOperator{\diff}{d}
+
+\begin{document}
+
+% ================= TITLE PAGE =================
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\Large \textbf{Internal Assessment}\par}
+    {\large \textbf{Mathematics: analysis and approaches}\par}
+    \vspace{1.5cm}
+    
+    {\normalsize \textbf{Sample IA Template Demonstration}\par}
+    \vspace{2cm}
+    
+    {\normalsize Word Count: 0000\par}
+    \vspace{1cm}
+
+    {\normalsize IB Candidate Code: 123ABC\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ================= CONTENT =================
+\section{Demonstration Section}
+
+\subsection{Text and Notes}
+\lipsum[1]
+
+\note{This is a sample note for drafting comments}
+
+% ================= EQUATION =================
+\subsection{Equation Example}
+\begin{equation}
+    \int_{0}^{\pi} \sin{x} \diff{x} = 2
+\end{equation}
+
+% ================= TABLE =================
+\subsection{Table Example}
+\begin{table}[H]
+\centering
+\caption{Sample Data}
+\begin{tabular}{ccc}
+\toprule
+x & y & z \\
+\midrule
+1 & 2 & 3 \\
+2 & 4 & 6 \\
+3 & 6 & 9 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ================= FIGURE =================
+\subsection{Figure Example}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{example-image}
+\caption{Sample Image}
+\end{figure}
+
+% ================= CODE =================
+\subsection{Code Example}
+\begin{lstlisting}[language=python]
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+print(fibonacci(10))
+\end{lstlisting}
+
+\begin{lstlisting}[language=Matlab, style=Matlab-editor]
+% euler's method
+for t = 1:steps
+    S = y(t,1); E = y(t,2); I = y(t,3); R = y(t,4); D = y(t,5);
+
+    dS = -beta * S * I;
+    dE = beta * S * I - sigma * E;
+    dI = sigma * E - gamma * I - mu * I;
+    dR = gamma * I;
+    dD = mu * I;
+
+    y(t+1,:) = y(t,:) + dt * [dS, dE, dI, dR, dD];
+end
+\end{lstlisting}
+
+% ================= ALGORITHM =================
+\subsection{Algorithm Example}
+\begin{algorithm}
+\caption{Sample Algorithm}
+Initialize $x = 0$\;
+\For{$i=1$ to $10$}{
+    $x = x + i$\;
+}
+\Return $x$\;
+\end{algorithm}
+
+% ================= APPENDIX =================
+\newpage
+\begin{appendices}
+\section{Appendix Example}
+\lipsum[2]
+\end{appendices}
+
+\end{document}
