@@ -1,0 +1,115 @@
+\documentclass[12pt, a4paper]{article}
+
+% Essential packages
+\usepackage{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{isomath}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{wrapfig}
+\usepackage{titlesec}
+\usepackage{siunitx}
+\usepackage{gensymb}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+\usepackage{listings}
+\usepackage{matlab-prettifier}
+\usepackage[vlined,ruled,linesnumbered]{algorithm2e}
+\usepackage{lipsum, fancyhdr}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[L]{\textbf{enter your candidate code}}
+\fancyhead[R]{\textbf{Page \thepage}}
+
+\usepackage[toc]{appendix}
+
+
+
+
+\fancyheadoffset[L]{\oddsidemargin}
+\fancyheadoffset[R]{\oddsidemargin}
+
+
+
+
+\lstset{
+	basicstyle=\ttfamily,
+	keywordstyle= \bfseries,
+	commentstyle= \ttfamily\color[RGB]{0,128,0}\slshape,
+	stringstyle = \ttfamily\color[RGB]{188,118,0}\slshape\bfseries,
+	identifierstyle=\color[RGB]{0,0,0},         
+	frame=shadowbox,
+	rulesepcolor=\color{red!20!green!20!blue!20},
+	showspaces=false,showstringspaces=false,  
+	extendedchars=false,
+	showtabs=false,
+	tabsize=1, breaklines,
+	numbers = left, numberstyle=\rmfamily\tiny\slshape, stepnumber = 1, numbersep= 5pt 
+}
+% Page settings
+\geometry{margin=2.5cm}
+\onehalfspacing
+\setcounter{secnumdepth}{4}
+
+\newcommand{\note}[1]{%
+    \textcolor{blue}{note:$\bm\langle$\textbf{#1}$\bm\rangle$}%
+}%
+
+
+
+% Title formatting
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\DeclareMathOperator{\diff}{d}
+
+\doublespacing
+\begin{document}
+
+% Title page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\Large \textbf{Internal Assessment}\par}
+    {\large \textbf{Mathematics: analysis and approaches }\par}
+    \vspace{1.5cm}
+    
+    {\normalsize \textbf{You title}\par}
+    \vspace{2cm}
+    
+    
+    {\normalsize Word Count: [enter your word count]\par}
+    \vspace{1cm}
+
+    {\normalsize IB Candidate Code: [enter your candidate code]\par}
+    
+\end{titlepage}
+
+% ================= TABLE OF CONTENTS =================
+\tableofcontents
+\newpage
+
+% ================= SECTIONS =================
+\section{I am a section}
+
+\subsection{I am a subsection}
+
+
+
+% ================= APPENDIX =================
+\newpage
+\begin{appendices}
+\section{I am an appendix}
+
+\end{appendices}
+
+\end{document}
